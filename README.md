@@ -25,3 +25,21 @@ Sem dependência: usa só o `fs` do Node.
 As fotos vão inline em base64 porque a primeira versão rodou como Artifact do
 Claude, que bloqueia imagem externa. Em hospedagem normal (Netlify, Vercel,
 Pages) dá pra apontar pro `assets/` e derrubar o HTML de ~420 KB pra ~40 KB.
+
+## Deploy (Vercel)
+
+Site estático, sem framework: em **Framework Preset** escolher *Other*, sem
+build command, output na raiz.
+
+O `index.html` já vai com `<!doctype>`, `charset`, `viewport` e
+`robots: noindex` — sem isso a página abre em quirks mode e o celular renderiza
+em largura de desktop.
+
+Pro link mostrar foto quando colado no WhatsApp, o `og:image` precisa de URL
+absoluta. Depois que a Vercel der o domínio:
+
+```bash
+SITE_URL=https://<dominio>.vercel.app node montar.js
+```
+
+e commitar o `index.html` gerado.

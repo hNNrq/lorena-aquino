@@ -1,9 +1,11 @@
 // Gera index.html a partir de _template.html, embutindo as fotos em base64.
-// O Artifact bloqueia imagem externa, então tudo tem que ir inline.
 //
 //   node montar.js
+//   SITE_URL=https://lorena-aquino.vercel.app node montar.js
 //
-// Depois: republicar o index.html NO MESMO caminho de arquivo pra manter a URL.
+// O SITE_URL só serve pras tags og: (o card que o WhatsApp mostra ao colar o
+// link). Sem ele, essas tags saem do arquivo e o preview vai sem foto.
+// Rodando dentro da Vercel, o domínio chega sozinho por VERCEL_PROJECT_PRODUCTION_URL.
 
 const fs = require('fs');
 const path = require('path');
@@ -30,6 +32,19 @@ html = html
   .split('__FOTO_HERO__').join(dataURI('sobre.jpg'))        // retrato do hero
   .split('__FOTO_SOBRE__').join(dataURI('card-sobre.jpg'))  // consultório, seção "sobre"
   .split('__WA__').join(WA);
+
+// domínio do site: só existe depois do deploy
+const SITE = (process.env.SITE_URL
+  || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL : '')
+).replace(/\/+$/, '');
+
+if (SITE) {
+  html = html.split('__SITE__').join(SITE);
+} else {
+  // og: com URL relativa o WhatsApp não resolve — melhor a tag não existir
+  html = html.replace(/^.*__SITE__.*\n/gm, '');
+  console.warn('aviso: sem SITE_URL, o link não vai ter foto no preview do WhatsApp.');
+}
 
 const restantes = html.match(/__[A-Z_]+__/g);
 if (restantes) {
