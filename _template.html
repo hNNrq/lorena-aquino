@@ -1,0 +1,1008 @@
+<title>Psicóloga Lorena Aquino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --paper:#F7F4F1;
+  --paper-2:#F0EBE6;
+  --ink:#2A2220;
+  --ink-soft:#4A3B36;
+  --muted:#6E5D55;
+  --line:rgba(42,34,32,.14);
+  --line-soft:rgba(42,34,32,.08);
+  --accent:#9C6634;          /* caramelo escurecido: legivel como texto */
+  --accent-fill:#C18D5D;     /* o caramelo da marca dela */
+  --accent-wash:rgba(193,141,93,.13);
+  --band:#2B211F;            /* o marrom da marca dela, como fundo */
+  --band-ink:#F3EBE5;
+  --band-muted:#B49F94;
+  --band-line:rgba(243,235,229,.20);
+  --band-accent:#DCA870;
+  --bar:#17181C;
+  --bar-ink:#E7E4DF;
+  --radius:14px;
+  --measure:63ch;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1F1916;
+    --paper-2:#2A2320;
+    --ink:#F0E7E1;
+    --ink-soft:#DCCEC6;
+    --muted:#A8958B;
+    --line:rgba(240,231,225,.16);
+    --line-soft:rgba(240,231,225,.09);
+    --accent:#DCA870;
+    --accent-fill:#C18D5D;
+    --accent-wash:rgba(193,141,93,.14);
+    --band:#0C0908;
+    --band-ink:#F3EBE5;
+    --band-muted:#A8958B;
+    --band-line:rgba(243,235,229,.18);
+    --band-accent:#DCA870;
+    --bar:#0B0C0E;
+    --bar-ink:#E7E4DF;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1F1916;
+  --paper-2:#2A2320;
+  --ink:#F0E7E1;
+  --ink-soft:#DCCEC6;
+  --muted:#A8958B;
+  --line:rgba(240,231,225,.16);
+  --line-soft:rgba(240,231,225,.09);
+  --accent:#DCA870;
+  --accent-fill:#C18D5D;
+  --accent-wash:rgba(193,141,93,.14);
+  --band:#0C0908;
+  --band-ink:#F3EBE5;
+  --band-muted:#A8958B;
+  --band-line:rgba(243,235,229,.18);
+  --band-accent:#DCA870;
+  --bar:#0B0C0E;
+  --bar-ink:#E7E4DF;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:18px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:-.018em;
+  text-wrap:balance;
+  margin:0;
+}
+p{margin:0}
+a{color:inherit}
+img{display:block}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.narrow{max-width:var(--measure)}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11.5px;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+
+/* ---------- assinatura de previa: uma linha fina, sem sermao ---------- */
+.previa-bar{
+  background:var(--paper-2);
+  color:var(--muted);
+  border-bottom:1px solid var(--line-soft);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:10.5px;
+  line-height:1.4;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  padding:8px 28px;
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  text-align:center;
+}
+.previa-bar b{color:var(--accent);font-weight:500}
+
+/* ---------- header ---------- */
+.topo{
+  position:sticky;top:0;z-index:40;
+  background:var(--paper);
+  border-bottom:1px solid var(--line-soft);
+}
+.topo-in{
+  max-width:1080px;margin:0 auto;padding:13px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.marca{display:flex;flex-direction:column;gap:1px;min-width:0}
+.marca .nome{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:16.5px;
+  letter-spacing:-.01em;line-height:1.1;
+}
+.marca .crp{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
+  color:var(--muted);text-transform:uppercase;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px;
+  letter-spacing:-.005em;
+  background:var(--accent-fill);color:#2A2220;
+  border:none;border-radius:999px;padding:11px 22px;
+  text-decoration:none;white-space:nowrap;
+  transition:transform .16s ease, filter .16s ease;
+}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-sm{padding:9px 17px;font-size:14px}
+.btn-ghost{
+  background:transparent;color:var(--ink);
+  border:1px solid var(--line);
+}
+.btn-ghost:hover{background:var(--accent-wash);filter:none}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px;
+}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 66px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,4.6vw,3.5rem);margin:16px 0 0}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{
+  font-size:1.19rem;color:var(--ink-soft);max-width:46ch;margin-top:20px;
+}
+.hero .sub{font-size:1.02rem;color:var(--muted);max-width:46ch;margin-top:12px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;
+  padding-top:20px;border-top:1px solid var(--line-soft);
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);
+  letter-spacing:.03em;
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--accent-fill);flex:none}
+
+.retrato{position:relative}
+.retrato img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;
+  border-radius:var(--radius);
+}
+.selo{
+  position:absolute;left:-16px;bottom:22px;
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:12px;padding:11px 15px;
+  display:flex;align-items:center;gap:11px;
+  box-shadow:0 10px 30px rgba(42,34,32,.13);
+  text-decoration:none;
+}
+.selo .estrelas{color:var(--accent-fill);font-size:14px;letter-spacing:1px;line-height:1;display:block}
+.selo .nota{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:22px;
+  line-height:1;font-variant-numeric:tabular-nums;
+}
+.selo .txt{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted);
+  letter-spacing:.05em;text-transform:uppercase;margin-top:4px;display:block;
+}
+
+/* ---------- secoes ---------- */
+section{scroll-margin-top:78px}
+.sec{padding:74px 0;border-top:1px solid var(--line-soft)}
+.sec-head{max-width:var(--measure)}
+.sec-head h2{font-size:clamp(1.75rem,3.1vw,2.4rem);margin:14px 0 0}
+.sec-head p{color:var(--muted);margin-top:16px;font-size:1.06rem}
+
+/* demandas - lista tipografica, nao card */
+.demandas{margin-top:44px;border-top:1px solid var(--line)}
+.demanda{
+  display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:14px 40px;
+  padding:22px 0;border-bottom:1px solid var(--line-soft);align-items:baseline;
+}
+.demanda h3{font-size:1.22rem;font-weight:600}
+.demanda p{color:var(--muted);font-size:1.02rem;max-width:56ch}
+
+/* ---------- faixa escura: o ciclo ---------- */
+.banda{background:var(--band);color:var(--band-ink);padding:80px 0 74px}
+.banda .eyebrow{color:var(--band-accent)}
+.banda h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin:14px 0 0}
+.banda .intro{color:var(--band-muted);margin-top:18px;max-width:60ch;font-size:1.07rem}
+
+.ciclo{margin-top:52px}
+.estacoes{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.estacao{position:relative;padding:0 24px 0 0}
+.estacao:not(:last-child)::after{
+  content:"";position:absolute;right:10px;top:11px;
+  width:8px;height:8px;border-top:1.5px solid var(--band-line);
+  border-right:1.5px solid var(--band-line);transform:rotate(45deg);
+}
+.estacao .n{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;
+  color:var(--band-accent);text-transform:uppercase;display:block;
+}
+.estacao h3{
+  font-size:1.06rem;font-weight:600;margin-top:9px;color:var(--band-ink);
+  letter-spacing:-.005em;
+}
+.estacao p{
+  margin-top:9px;font-size:.93rem;line-height:1.55;color:var(--band-muted);
+}
+.estacao.chave h3{color:var(--band-accent)}
+
+.corte{margin-top:18px;display:grid;grid-template-columns:repeat(5,1fr)}
+.corte-in{
+  grid-column:4;padding-right:24px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.5;
+  letter-spacing:.04em;color:var(--band-accent);
+  border-top:1.5px solid var(--band-accent);padding-top:10px;
+}
+
+.volta{
+  position:relative;height:62px;margin-top:26px;
+  border:1px solid var(--band-line);border-top:none;border-radius:0 0 16px 16px;
+}
+.volta::before{
+  content:"";position:absolute;left:-5px;top:-3px;width:0;height:0;
+  border-left:5px solid transparent;border-right:5px solid transparent;
+  border-bottom:8px solid var(--band-line);
+}
+.volta span{
+  position:absolute;left:50%;bottom:-.85em;transform:translateX(-50%);
+  background:var(--band);padding:0 16px;white-space:nowrap;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+  color:var(--band-muted);text-transform:uppercase;
+}
+.volta-mobile{display:none}
+
+/* ---------- sobre ---------- */
+.sobre-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.sobre-foto img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;border-radius:var(--radius)}
+.sobre-txt h2{font-size:clamp(1.7rem,3vw,2.25rem);margin-top:14px}
+.sobre-txt p{margin-top:18px;color:var(--ink-soft)}
+.sobre-txt p.destaque{font-size:1.14rem;color:var(--ink)}
+.credenciais{
+  margin-top:30px;padding-top:22px;border-top:1px solid var(--line);
+  display:grid;gap:14px;
+}
+.cred{display:grid;grid-template-columns:112px 1fr;gap:18px;align-items:baseline}
+.cred dt{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);
+}
+.cred dd{margin:0;font-size:1rem}
+
+/* ---------- passos ---------- */
+.passos{margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+.passo{padding-top:18px;border-top:2px solid var(--accent-fill)}
+.passo .n{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+  color:var(--accent);text-transform:uppercase;display:block;
+}
+.passo h3{font-size:1.1rem;margin-top:10px}
+.passo p{margin-top:9px;font-size:.98rem;color:var(--muted)}
+
+/* ---------- onde ---------- */
+.onde{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.modo{
+  padding:28px 28px 26px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--paper-2);
+}
+.modo h3{font-size:1.24rem;margin-top:11px}
+.modo p{margin-top:12px;color:var(--muted);font-size:1rem}
+.modo .end{
+  margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+  line-height:1.65;color:var(--ink-soft);letter-spacing:.01em;
+}
+.modo a.link{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+
+/* ---------- faq ---------- */
+.faq{margin-top:40px;max-width:78ch;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line-soft)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:21px 40px 21px 0;position:relative;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.09rem;
+  letter-spacing:-.008em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:8px;top:50%;width:9px;height:9px;
+  border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s ease;
+}
+.faq details[open] summary::after{transform:translateY(-25%) rotate(-135deg)}
+.faq .resp{padding:0 0 24px;color:var(--muted);max-width:var(--measure)}
+.faq .resp p + p{margin-top:12px}
+
+/* ---------- cta final ---------- */
+.cta-final{background:var(--paper-2);border-top:1px solid var(--line-soft);padding:76px 0}
+.cta-final h2{font-size:clamp(1.8rem,3.3vw,2.5rem);margin-top:14px}
+.cta-final p{margin-top:18px;color:var(--muted);max-width:52ch;font-size:1.08rem}
+
+/* ---------- rodape ---------- */
+footer{padding:52px 0 44px;border-top:1px solid var(--line);font-size:.93rem}
+.rodape-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.rodape-grid .nome-rod{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.12rem;
+}
+footer p{color:var(--muted);margin-top:10px;max-width:52ch}
+.legal{
+  margin-top:34px;padding-top:22px;border-top:1px solid var(--line-soft);
+  font-size:.85rem;color:var(--muted);max-width:74ch;
+}
+.legal p + p{margin-top:9px}
+
+/* ==========================================================
+   MOVIMENTO
+   Regra: nada aqui esconde conteúdo. Tudo é legível parado.
+   A animação destaca, nunca revela.
+   ========================================================== */
+
+html{scroll-behavior:smooth}
+
+/* --- entrada do hero: sobe de um estado já visível --- */
+@keyframes sobe{
+  from{opacity:.28;transform:translateY(16px)}
+  to{opacity:1;transform:none}
+}
+.anima > *{animation:sobe .62s cubic-bezier(.22,.9,.28,1) both}
+.anima > *:nth-child(1){animation-delay:.02s}
+.anima > *:nth-child(2){animation-delay:.09s}
+.anima > *:nth-child(3){animation-delay:.17s}
+.anima > *:nth-child(4){animation-delay:.24s}
+.anima > *:nth-child(5){animation-delay:.31s}
+.anima > *:nth-child(6){animation-delay:.38s}
+.anima-foto{animation:sobe .7s cubic-bezier(.22,.9,.28,1) .12s both}
+
+/* --- o selo do Google entra depois, pra o olho pegar --- */
+@keyframes pop{
+  0%{opacity:.15;transform:scale(.9) translateY(8px)}
+  62%{opacity:1;transform:scale(1.035) translateY(0)}
+  100%{opacity:1;transform:none}
+}
+.selo{animation:pop .6s cubic-bezier(.3,1.25,.5,1) .72s both}
+.selo{transition:transform .2s ease, box-shadow .2s ease}
+.selo:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(42,34,32,.2)}
+
+/* --- brilho que atravessa o botão principal de tempos em tempos --- */
+.btn-pulso{position:relative;overflow:hidden}
+.btn-pulso::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 36%,rgba(255,255,255,.4) 50%,transparent 64%);
+  transform:translateX(-135%);
+  animation:brilho 7.5s ease-in-out 2.6s infinite;
+}
+@keyframes brilho{
+  0%{transform:translateX(-135%)}
+  16%{transform:translateX(135%)}
+  100%{transform:translateX(135%)}
+}
+
+/* --- header ganha sombra ao rolar --- */
+.topo{transition:box-shadow .28s ease}
+.topo.rolou{box-shadow:0 8px 26px rgba(42,34,32,.11)}
+
+/* --- lista de demandas: barra de acento no hover --- */
+.demanda{position:relative}
+.demanda::before{
+  content:"";position:absolute;left:-18px;top:20px;bottom:20px;width:2px;
+  background:var(--accent-fill);border-radius:2px;
+  transform:scaleY(0);transform-origin:top;
+  transition:transform .32s cubic-bezier(.22,.9,.28,1);
+}
+.demanda:hover::before{transform:scaleY(1)}
+.demanda h3{transition:color .26s ease}
+.demanda:hover h3{color:var(--accent)}
+
+/* ==========================================================
+   O CICLO ANIMADO — a peça central
+   Um pulso caminha pelas 5 estações, volta pelo arco e recomeça
+   com um pouco mais de força. É o próprio mecanismo se mostrando.
+   ========================================================== */
+
+.estacao{transition:transform .4s cubic-bezier(.22,.9,.28,1)}
+.estacao .n,.estacao h3,.estacao p{transition:color .38s ease}
+.estacao::before{
+  content:"";position:absolute;left:0;top:-14px;height:2px;width:0;
+  background:var(--band-accent);border-radius:2px;
+  transition:width .42s cubic-bezier(.22,.9,.28,1), opacity .3s ease;
+  opacity:0;
+}
+.estacao.ativa{transform:translateY(-3px)}
+.estacao.ativa::before{width:34px;opacity:1}
+.estacao.ativa .n{color:var(--band-accent)}
+.estacao.ativa h3{color:var(--band-accent)}
+.estacao.ativa p{color:var(--band-ink)}
+/* a seta logo depois da estação ativa acende */
+.estacao.ativa:not(:last-child)::after{
+  border-color:var(--band-accent);
+  transition:border-color .3s ease;
+}
+
+/* o marcador do corte brilha quando o pulso passa pela evitação */
+.corte-in{transition:color .35s ease, border-color .35s ease, transform .35s ease}
+.ciclo[data-ativo="4"] .corte-in{
+  transform:translateY(-2px);
+  border-color:var(--band-accent);
+}
+.ciclo[data-ativo="4"] .corte-in::after{
+  content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--band-accent);margin-left:8px;vertical-align:middle;
+  animation:bate 1s ease-in-out infinite;
+}
+@keyframes bate{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.55);opacity:.55}
+}
+
+/* o arco de retorno acende no fim da volta */
+.volta{transition:border-color .45s ease, box-shadow .5s ease}
+.volta::before{transition:border-bottom-color .45s ease}
+.volta span{transition:color .4s ease, letter-spacing .5s ease}
+.volta.ativa{
+  border-color:var(--band-accent);
+  box-shadow:0 0 calc(var(--forca,1) * 9px) rgba(220,168,112,calc(var(--forca,1) * .06));
+}
+.volta.ativa::before{border-bottom-color:var(--band-accent)}
+.volta.ativa span{color:var(--band-accent);letter-spacing:.11em}
+.volta-mobile{transition:color .4s ease,border-color .4s ease}
+.volta-mobile.ativa{color:var(--band-accent);border-color:var(--band-accent)}
+
+/* --- FAQ: abre e fecha com altura animada (JS controla) --- */
+.faq .resp{overflow:hidden;transition:height .32s cubic-bezier(.3,.8,.35,1), opacity .24s ease}
+.faq summary{transition:color .22s ease}
+.faq summary:hover{color:var(--accent)}
+
+/* --- passos: a régua de cima cresce no hover --- */
+.passo{transition:border-color .28s ease}
+.passo:hover{border-color:var(--accent)}
+
+/* --- respeitar quem desligou animação no sistema --- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .anima > *,.anima-foto,.selo{animation:none}
+  .btn-pulso::after{animation:none;display:none}
+  .estacao::before{display:none}
+  .ciclo[data-ativo="4"] .corte-in::after{animation:none}
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .retrato{order:-1;max-width:400px}
+  .selo{left:auto;right:-8px;bottom:-14px}
+  .sobre-grid{grid-template-columns:1fr;gap:34px}
+  .sobre-foto{max-width:340px}
+  .passos{grid-template-columns:1fr 1fr;gap:28px}
+  .onde{grid-template-columns:1fr}
+  .rodape-grid{grid-template-columns:1fr;gap:26px}
+  .estacoes{grid-template-columns:1fr;gap:26px}
+  .estacao{padding:0 0 0 22px;border-left:1px solid var(--band-line)}
+  .estacao:not(:last-child)::after{
+    right:auto;left:-5px;top:auto;bottom:-20px;transform:rotate(135deg);
+  }
+  /* empilhado, o pulso acende a guia da esquerda em vez da régua de cima */
+  .estacao::before{
+    left:-1px;top:0;bottom:auto;width:2px;height:0;
+    transition:height .42s cubic-bezier(.22,.9,.28,1), opacity .3s ease;
+  }
+  .estacao.ativa{transform:translateX(3px)}
+  .estacao.ativa::before{width:2px;height:100%;opacity:1}
+  .corte{display:block;margin-top:22px}
+  .corte-in{padding-right:0}
+  .volta{display:none}
+  .volta-mobile{
+    display:block;margin-top:26px;padding-top:16px;
+    border-top:1px solid var(--band-line);
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--band-muted);
+  }
+}
+@media (max-width:620px){
+  body{font-size:17px}
+  .wrap{padding:0 20px}
+  .topo-in{padding:11px 20px}
+  .previa-bar{padding:8px 20px;font-size:10px;letter-spacing:.14em}
+  .hero{padding:52px 0 46px}
+  .sec,.banda,.cta-final{padding:56px 0}
+  .passos{grid-template-columns:1fr}
+  .demanda{grid-template-columns:1fr;gap:7px;padding:19px 0}
+  .cred{grid-template-columns:1fr;gap:3px}
+  .marca .nome{font-size:15px}
+  .btn{font-size:14px;padding:10px 18px}
+
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+
+<!-- ================= assinatura de prévia ================= -->
+<div class="previa-bar">
+  <span><b>Prévia</b> · Norman.dgt</span>
+</div>
+
+<!-- ================= header ================= -->
+<header class="topo">
+  <div class="topo-in">
+    <div class="marca">
+      <span class="nome">Lorena Aquino</span>
+      <span class="crp">Psicóloga · CRP 04/56533</span>
+    </div>
+    <a class="btn btn-sm" href="__WA__" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 2.5C6.79 2.5 2.53 6.76 2.53 12c0 1.68.44 3.32 1.28 4.76L2.5 21.5l4.87-1.28a9.45 9.45 0 004.67 1.22h.01c5.24 0 9.5-4.26 9.5-9.5 0-2.54-.99-4.92-2.78-6.71a9.43 9.43 0 00-6.73-2.73zm0 17.3h-.01a7.9 7.9 0 01-4.02-1.1l-.29-.17-2.99.78.8-2.92-.19-.3a7.86 7.86 0 01-1.21-4.2c0-4.36 3.55-7.9 7.91-7.9 2.11 0 4.1.83 5.59 2.32a7.85 7.85 0 012.31 5.59c0 4.36-3.55 7.9-7.9 7.9z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- ================= hero ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="anima">
+      <span class="eyebrow">Terapia Cognitivo-Comportamental</span>
+      <h1>Psicóloga em Belo&nbsp;Horizonte e online, com foco em <em>ansiedade</em>.</h1>
+      <p class="lead">A TCC trabalha o que mantém o problema de pé hoje — e te ensina a mexer nisso sozinha, fora da sessão.</p>
+      <p class="sub">Ansiedade, TDAH, mudança de hábitos, depressão e conflitos de relacionamento. Atendimento para adultos.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-pulso" href="__WA__" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 2.5C6.79 2.5 2.53 6.76 2.53 12c0 1.68.44 3.32 1.28 4.76L2.5 21.5l4.87-1.28a9.45 9.45 0 004.67 1.22h.01c5.24 0 9.5-4.26 9.5-9.5 0-2.54-.99-4.92-2.78-6.71a9.43 9.43 0 00-6.73-2.73zm0 17.3h-.01a7.9 7.9 0 01-4.02-1.1l-.29-.17-2.99.78.8-2.92-.19-.3a7.86 7.86 0 01-1.21-4.2c0-4.36 3.55-7.9 7.91-7.9 2.11 0 4.1.83 5.59 2.32a7.85 7.85 0 012.31 5.59c0 4.36-3.55 7.9-7.9 7.9z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#como-funciona">Como é a primeira sessão</a>
+      </div>
+      <div class="hero-meta">
+        <span><i class="dot"></i>Online para todo o Brasil</span>
+        <span><i class="dot"></i>Presencial em Lourdes, BH</span>
+        <span><i class="dot"></i>CRP 04/56533</span>
+      </div>
+    </div>
+
+    <div class="retrato anima-foto">
+      <img src="__FOTO_HERO__" alt="Lorena Aquino, psicóloga clínica em Belo Horizonte">
+      <a class="selo" href="https://www.google.com/maps/place/?q=place_id:ChIJlfO9cCWbpgAR0WP0DuBpXJk" target="_blank" rel="noopener">
+        <span class="nota">5,0</span>
+        <span>
+          <span class="estrelas">★★★★★</span>
+          <span class="txt">9 avaliações no Google</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= demandas ================= -->
+<section class="sec" id="demandas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Por onde as pessoas chegam</span>
+      <h2>O que costuma trazer alguém até aqui</h2>
+      <p>Não precisa ter diagnóstico, nem saber nomear o que está acontecendo. Basta reconhecer o que está atrapalhando.</p>
+    </div>
+
+    <div class="demandas">
+      <div class="demanda">
+        <h3>Ansiedade</h3>
+        <p>Preocupação que não desliga, corpo em alerta, tarefas adiadas por medo de não dar conta. Crise de pânico e medo de falar em público entram aqui.</p>
+      </div>
+      <div class="demanda">
+        <h3>TDAH</h3>
+        <p>Começar muita coisa e terminar pouca, perder prazos, esquecer o que era pra fazer. A terapia trabalha estrutura e rotina — anda junto com a avaliação médica, não no lugar dela.</p>
+      </div>
+      <div class="demanda">
+        <h3>Mudança de hábitos</h3>
+        <p>Aquilo que você sabe que quer mudar há meses e não sai do lugar. Sono, exercício, estudo, tempo de tela, alimentação.</p>
+      </div>
+      <div class="demanda">
+        <h3>Depressão</h3>
+        <p>Falta de vontade, cansaço que não passa com descanso, afastamento das pessoas, sensação de que nada vale o esforço.</p>
+      </div>
+      <div class="demanda">
+        <h3>Relacionamentos</h3>
+        <p>Conflitos que se repetem, dificuldade de dizer não, ciúme, término. Trabalho individual, mesmo quando o assunto é a outra pessoa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= a faixa: o ciclo da ansiedade ================= -->
+<section class="banda" id="metodo">
+  <div class="wrap">
+    <span class="eyebrow">O modelo de manutenção da TCC</span>
+    <h2>Ansiedade não se mantém pelo medo. Se mantém pelo alívio.</h2>
+    <p class="intro">Toda vez que você evita o que dá medo, o desconforto cai na hora. Esse alívio funciona como recompensa — e o cérebro aprende que evitar deu certo. Na vez seguinte, o medo volta um pouco maior. É esse ciclo que a TCC mapeia primeiro.</p>
+
+    <div class="ciclo">
+      <div class="estacoes">
+        <div class="estacao">
+          <span class="n">01 · Gatilho</span>
+          <h3>A situação aparece</h3>
+          <p>Uma reunião marcada, uma ligação pra fazer, um convite que chegou.</p>
+        </div>
+        <div class="estacao">
+          <span class="n">02 · Pensamento</span>
+          <h3>A previsão automática</h3>
+          <p>“Vou travar.” “Vão perceber que eu não sei.” Vem pronta, em segundos.</p>
+        </div>
+        <div class="estacao">
+          <span class="n">03 · Corpo</span>
+          <h3>A ansiedade sobe</h3>
+          <p>Coração acelera, respiração curta, a cabeça já ensaia o pior desfecho.</p>
+        </div>
+        <div class="estacao chave">
+          <span class="n">04 · Comportamento</span>
+          <h3>A evitação</h3>
+          <p>Adia, delega, cancela, prepara demais. Ou vai — mas com muleta.</p>
+        </div>
+        <div class="estacao">
+          <span class="n">05 · Consequência</span>
+          <h3>O alívio imediato</h3>
+          <p>Melhora na hora. E é justamente isso que ensina o cérebro a repetir.</p>
+        </div>
+      </div>
+
+      <div class="corte">
+        <div class="corte-in">↑ é neste ponto que a terapia entra</div>
+      </div>
+
+      <div class="volta"><span>volta pro começo — e um pouco mais forte</span></div>
+      <div class="volta-mobile">↻ volta pro começo — e um pouco mais forte</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= sobre ================= -->
+<section class="sec" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-foto">
+      <img src="__FOTO_SOBRE__" alt="Lorena Aquino no consultório">
+    </div>
+    <div class="sobre-txt">
+      <span class="eyebrow">Quem atende você</span>
+      <h2>Lorena Aquino</h2>
+      <p class="destaque">Psicóloga clínica com formação em Terapia Cognitivo-Comportamental. Atende adultos, online e no consultório em Lourdes.</p>
+      <p>Se você busca uma forma eficaz de lidar com ansiedade, depressão, problemas de relacionamento ou outros desafios emocionais, a psicoterapia é um caminho seguro para o seu bem-estar. Aqui você terá um espaço acolhedor e sem julgamentos para compreender suas emoções e construir soluções.</p>
+      <p>O objetivo não é você depender da terapia. É sair dela com ferramenta na mão — reconhecendo o próprio ciclo e sabendo o que fazer quando ele começar de novo.</p>
+
+      <dl class="credenciais">
+        <div class="cred"><dt>Registro</dt><dd>CRP 04/56533 — Conselho Regional de Psicologia de Minas Gerais</dd></div>
+        <div class="cred"><dt>Abordagem</dt><dd>Terapia Cognitivo-Comportamental (TCC)</dd></div>
+        <div class="cred"><dt>Atende</dt><dd>Adultos, em atendimento individual</dd></div>
+        <div class="cred"><dt>Onde</dt><dd>Online (todo o Brasil) e presencial em Belo Horizonte</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================= como funciona ================= -->
+<section class="sec" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Do primeiro contato à primeira sessão</span>
+      <h2>Como funciona</h2>
+      <p>Quatro passos, nessa ordem. Sem formulário, sem cadastro e sem esperar retorno de ligação.</p>
+    </div>
+
+    <div class="passos">
+      <div class="passo">
+        <span class="n">Passo 01</span>
+        <h3>Você manda mensagem</h3>
+        <p>No WhatsApp, com uma linha sobre o que está acontecendo. Quem responde é a Lorena.</p>
+      </div>
+      <div class="passo">
+        <span class="n">Passo 02</span>
+        <h3>Vocês combinam o horário</h3>
+        <p>Online ou presencial em Lourdes, no horário que couber na sua semana.</p>
+      </div>
+      <div class="passo">
+        <span class="n">Passo 03</span>
+        <h3>A primeira sessão</h3>
+        <p>Você conta o que te trouxe. Ela devolve como a TCC enxerga o seu caso e o que dá pra trabalhar.</p>
+      </div>
+      <div class="passo">
+        <span class="n">Passo 04</span>
+        <h3>O plano</h3>
+        <p>Vocês definem o objetivo e a frequência. Daí em diante, sessão e tarefa entre as sessões.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= onde ================= -->
+<section class="sec" id="onde">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Modalidades</span>
+      <h2>Onde acontece</h2>
+    </div>
+
+    <div class="onde">
+      <div class="modo">
+        <span class="eyebrow">Online</span>
+        <h3>De qualquer lugar do Brasil</h3>
+        <p>Por vídeo, em plataforma com conexão segura. Você precisa de internet estável e de um lugar onde consiga falar sem ser interrompida.</p>
+        <div class="end">
+          Atendimento psicológico on-line regulamentado<br>
+          pela Resolução CFP nº 11/2018.
+        </div>
+      </div>
+      <div class="modo">
+        <span class="eyebrow">Presencial</span>
+        <h3>Consultório em Lourdes</h3>
+        <p>Região central de Belo Horizonte, com estacionamento por perto e acesso fácil pela Avenida Olegário Maciel.</p>
+        <div class="end">
+          Rua dos Guajajaras, 910 — Lourdes<br>
+          Belo Horizonte / MG · 30180-106<br>
+          <a class="link" href="https://www.google.com/maps/place/?q=place_id:ChIJlfO9cCWbpgAR0WP0DuBpXJk" target="_blank" rel="noopener">Ver no Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= faq ================= -->
+<section class="sec" id="duvidas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Antes de mandar mensagem</span>
+      <h2>Dúvidas que costumam travar o primeiro contato</h2>
+    </div>
+
+    <div class="faq">
+      <details open>
+        <summary>Nunca fiz terapia. Como é a primeira sessão?</summary>
+        <div class="resp">
+          <p>É uma conversa. Você fala do que está te incomodando, no seu ritmo — não existe jeito certo de começar e não tem nada que você precise preparar antes.</p>
+          <p>No fim dessa sessão você já sai com uma leitura do seu caso e uma ideia do que dá pra trabalhar. Se não fizer sentido, não tem compromisso de continuar.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Terapia online funciona igual à presencial?</summary>
+        <div class="resp">
+          <p>Para a maior parte das demandas, sim. O atendimento psicológico por vídeo é regulamentado no Brasil pela Resolução CFP nº 11/2018 e segue o mesmo sigilo do presencial.</p>
+          <p>Existem situações em que o presencial é mais indicado — e isso é dito com franqueza logo no começo, não depois de meses.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quanto tempo dura o processo?</summary>
+        <div class="resp">
+          <p>A TCC trabalha com objetivo definido, então dá pra estimar. Depois das primeiras sessões, com o quadro já mapeado, você recebe uma previsão de quantas sessões aquele objetivo tende a levar.</p>
+          <p>Não é um processo aberto, sem fim à vista: a alta faz parte do plano desde o início.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quanto custa a sessão?</summary>
+        <div class="resp">
+          <p>O valor é informado no primeiro contato pelo WhatsApp, antes de qualquer agendamento, junto com as formas de pagamento e a política de remarcação.</p>
+          <p>É possível emitir recibo para pedido de reembolso no seu plano de saúde.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Preciso ter diagnóstico pra começar?</summary>
+        <div class="resp">
+          <p>Não. A maioria das pessoas chega sem diagnóstico nenhum — chega porque alguma coisa está atrapalhando o trabalho, o sono ou os relacionamentos.</p>
+          <p>Quando houver indicação de avaliação médica, isso é conversado com você e encaminhado.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Faço uso de medicação. Posso fazer terapia junto?</summary>
+        <div class="resp">
+          <p>Pode, e em muitos casos é a combinação mais indicada. Psicólogo não prescreve nem suspende medicação — quem cuida disso é o médico que acompanha você.</p>
+          <p>O trabalho aqui anda junto com o dele, sem interferir na conduta médica.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>O que eu falo fica entre nós?</summary>
+        <div class="resp">
+          <p>Fica. O sigilo profissional é obrigação prevista no Código de Ética Profissional do Psicólogo, e vale tanto no presencial quanto no online.</p>
+          <p>As únicas exceções são as previstas em lei, ligadas a risco à vida — e, se algum dia for o caso, isso é conversado com você.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= cta final ================= -->
+<section class="cta-final">
+  <div class="wrap narrow">
+    <span class="eyebrow">Primeiro passo</span>
+    <h2>Uma mensagem já resolve o começo.</h2>
+    <p>Escreva em uma linha o que está acontecendo. A partir daí vocês combinam o horário.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-pulso" href="__WA__" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 2.5C6.79 2.5 2.53 6.76 2.53 12c0 1.68.44 3.32 1.28 4.76L2.5 21.5l4.87-1.28a9.45 9.45 0 004.67 1.22h.01c5.24 0 9.5-4.26 9.5-9.5 0-2.54-.99-4.92-2.78-6.71a9.43 9.43 0 00-6.73-2.73zm0 17.3h-.01a7.9 7.9 0 01-4.02-1.1l-.29-.17-2.99.78.8-2.92-.19-.3a7.86 7.86 0 01-1.21-4.2c0-4.36 3.55-7.9 7.91-7.9 2.11 0 4.1.83 5.59 2.32a7.85 7.85 0 012.31 5.59c0 4.36-3.55 7.9-7.9 7.9z"/></svg>
+        (31) 97510-0796
+      </a>
+      <a class="btn btn-ghost" href="https://instagram.com/psilorenaaquino" target="_blank" rel="noopener">@psilorenaaquino</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= rodapé ================= -->
+<footer>
+  <div class="wrap">
+    <div class="rodape-grid">
+      <div>
+        <div class="nome-rod">Lorena Aquino · Psicóloga</div>
+        <p>Psicóloga clínica em Belo Horizonte. Terapia Cognitivo-Comportamental para adultos, online e presencial.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Contato</span>
+        <p>
+          WhatsApp (31) 97510-0796<br>
+          Rua dos Guajajaras, 910 — Lourdes, BH<br>
+          <a href="https://instagram.com/psilorenaaquino" target="_blank" rel="noopener">@psilorenaaquino</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <p><strong>CRP 04/56533</strong> — Conselho Regional de Psicologia de Minas Gerais (CRP-04).</p>
+      <p>Atendimento psicológico mediado por tecnologia da informação e da comunicação conforme a Resolução CFP nº 11/2018. O sigilo profissional segue o Código de Ética Profissional do Psicólogo (Resolução CFP nº 10/2005).</p>
+      <p>Este site tem finalidade informativa e não substitui avaliação, diagnóstico ou acompanhamento médico. Em situação de urgência, procure o CVV pelo 188 (ligação gratuita, 24h) ou o serviço de emergência mais próximo.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var semAnimacao = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- header ganha sombra ao rolar ---------- */
+  var topo = document.querySelector('.topo');
+  if (topo) {
+    var marcaRolagem = function () {
+      topo.classList.toggle('rolou', window.scrollY > 40);
+    };
+    marcaRolagem();
+    window.addEventListener('scroll', marcaRolagem, { passive: true });
+  }
+
+  /* ==========================================================
+     O ciclo da ansiedade, rodando
+     Um pulso caminha pelas 5 estações, fecha pelo arco de volta
+     e recomeça um pouco mais forte. Nada fica escondido: as cinco
+     caixas já estão legíveis paradas — o pulso só destaca.
+     ========================================================== */
+  var ciclo = document.querySelector('.ciclo');
+  var estacoes = Array.prototype.slice.call(document.querySelectorAll('.estacao'));
+  var volta = document.querySelector('.volta');
+  var voltaMobile = document.querySelector('.volta-mobile');
+
+  if (ciclo && estacoes.length && !semAnimacao) {
+    var timer = null;
+    var indice = 0;
+    var forca = 0;
+
+    var limpar = function () {
+      estacoes.forEach(function (e) { e.classList.remove('ativa'); });
+    };
+
+    var encerrarVolta = function () {
+      if (volta) volta.classList.remove('ativa');
+      if (voltaMobile) voltaMobile.classList.remove('ativa');
+    };
+
+    var passo = function () {
+      limpar();
+
+      if (indice < estacoes.length) {
+        estacoes[indice].classList.add('ativa');
+        ciclo.setAttribute('data-ativo', String(indice + 1));
+        indice++;
+        // segura mais tempo na evitação (04) e no alívio (05):
+        // é onde está a ideia que ela precisa entender
+        var espera = (indice === 4 || indice === 5) ? 1600 : 900;
+        timer = setTimeout(passo, espera);
+        return;
+      }
+
+      // fechou a volta
+      ciclo.removeAttribute('data-ativo');
+      forca = (forca % 3) + 1;
+      ciclo.style.setProperty('--forca', String(forca));
+      if (volta) volta.classList.add('ativa');
+      if (voltaMobile) voltaMobile.classList.add('ativa');
+
+      timer = setTimeout(function () {
+        encerrarVolta();
+        indice = 0;
+        timer = setTimeout(passo, 650);
+      }, 1700);
+    };
+
+    var parar = function () {
+      clearTimeout(timer);
+      timer = null;
+      limpar();
+      encerrarVolta();
+      ciclo.removeAttribute('data-ativo');
+      indice = 0;
+    };
+
+    if ('IntersectionObserver' in window) {
+      // só roda enquanto está na tela — não gasta bateria dela à toa
+      var observador = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) {
+            if (!timer) timer = setTimeout(passo, 420);
+          } else {
+            parar();
+          }
+        });
+      }, { threshold: 0.2 });
+      observador.observe(ciclo);
+    } else {
+      timer = setTimeout(passo, 420);
+    }
+  }
+
+  /* ---------- FAQ abrindo e fechando com altura animada ---------- */
+  document.querySelectorAll('.faq details').forEach(function (detalhe) {
+    var resposta = detalhe.querySelector('.resp');
+    var resumo = detalhe.querySelector('summary');
+    if (!resposta || !resumo) return;
+
+    resumo.addEventListener('click', function (evento) {
+      if (semAnimacao) return; // deixa o comportamento nativo
+
+      evento.preventDefault();
+
+      if (detalhe.open) {
+        resposta.style.height = resposta.scrollHeight + 'px';
+        resposta.style.opacity = '1';
+        requestAnimationFrame(function () {
+          resposta.style.height = '0px';
+          resposta.style.opacity = '0';
+        });
+        var aoFechar = function (e) {
+          if (e.propertyName !== 'height') return;
+          resposta.removeEventListener('transitionend', aoFechar);
+          detalhe.open = false;
+          resposta.style.height = '';
+          resposta.style.opacity = '';
+        };
+        resposta.addEventListener('transitionend', aoFechar);
+      } else {
+        detalhe.open = true;
+        var altura = resposta.scrollHeight;
+        resposta.style.height = '0px';
+        resposta.style.opacity = '0';
+        requestAnimationFrame(function () {
+          resposta.style.height = altura + 'px';
+          resposta.style.opacity = '1';
+        });
+        var aoAbrir = function (e) {
+          if (e.propertyName !== 'height') return;
+          resposta.removeEventListener('transitionend', aoAbrir);
+          resposta.style.height = '';
+          resposta.style.opacity = '';
+        };
+        resposta.addEventListener('transitionend', aoAbrir);
+      }
+    });
+  });
+})();
+</script>
